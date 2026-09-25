@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAUD TRAVELS AND CSC CENTER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false;"> <!-- Right Click Disabled -->
+
+    <!-- Offer Popup Modal -->
+    <div id="offerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeOffer()">&times;</span>
+            <h2 id="offerTitle">Special Offer!</h2>
+            <img id="offerImage" src="" alt="Offer Image">
+            <p id="offerDesc"></p>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Shop Logo" id="shopLogo">
+            </div>
+            <div class="contact-info">
+                <p>📞 Customer: 8604890504, 7235870535</p>
+                <p>👤 CO - Owner: Meraj Ahmad, Anurag Yadav</p>
+            </div>
+        </div>
+        <h1>सऊद ट्रावेल्स & सी एस सी सेण्टर</h1>
+        <p class="address">पता- जयराजपुर बिन्दवल मस्जिद के पास |</p>
+        
+        <div class="datetime">
+            <span id="date-time"></span>
+        </div>
+    </header>
+
+    <!-- Shop Images Scroller -->
+    <section class="image-scroller">
+        <img src="shop-images/1.jpg" alt="Shop Image 1">
+        <img src="shop-images/2.jpg" alt="Shop Image 2">
+        <img src="shop-images/3.jpg" alt="Shop Image 3">
+        <img src="shop-images/4.jpg" alt="Shop Image 4">
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-container">
+        <h2>हमारी सेवाएँ</h2>
+        <div class="services-grid" id="servicesGrid">
+            <!-- Services will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer & Social Links (Updated with Custom Logos) -->
+    <footer>
+        <div class="social-links">
+            <a href="https://maps.app.goo.gl/Dsc8UputUHvo2myg9" target="_blank" class="social-btn map-btn">
+                <img src="images/map-logo.png" alt="Map Logo"> लोकेशन देखें
+            </a>
+            
+            <a href="https://www.instagram.com/saud_travels_csc" target="_blank" class="social-btn insta-btn">
+                <img src="images/insta-logo.png" alt="Instagram Logo"> Instagram पर फॉलो करें
+            </a>
+        </div>
+        <p>&copy; 2026 Saud Travels & CSC Center. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
