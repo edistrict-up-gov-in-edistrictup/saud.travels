@@ -10,9 +10,9 @@ body { color: #333; overflow-x: hidden; margin: 0; padding: 0; }
 
 /* Intro Screen */
 #intro-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; background: rgba(0,0,0,0.7); overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; }
-.intro-content { position: relative; z-index: 2; text-align: center; }
+.intro-content { position: relative; z-index: 2; text-align: center; padding: 20px; }
 
-/* Start Button for Video & Audio Play */
+/* Start Button for Audio Policy Bypass */
 #start-btn { position: relative; z-index: 10; padding: 18px 40px; font-size: 1.8rem; font-weight: 900; background: linear-gradient(45deg, #0074D9, #001f3f); color: #ffd700; border: 3px solid #ffd700; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 25px rgba(0, 116, 217, 0.6); transition: 0.3s; animation: pulseBtn 1.5s infinite; text-transform: uppercase; }
 #start-btn i { margin-left: 10px; }
 #start-btn:hover { transform: scale(1.1); box-shadow: 0 15px 35px rgba(0, 116, 217, 0.9); }
@@ -52,7 +52,7 @@ header h1 { font-size: 2.2em; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(
 /* Colorful Services Grid */
 .services-container { padding: 40px 20px; text-align: center; flex: 1; }
 .services-container h2 { margin-bottom: 40px; color: #001f3f; font-size: 2.5em; text-transform: uppercase; border-bottom: 3px solid #ff851b; display: inline-block; padding-bottom: 10px; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
 
 /* Premium Vivid Gradients for Boxes */
 .service-box:nth-child(6n+1) { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
@@ -102,14 +102,29 @@ footer { width: 100%; background: rgba(0,31,63,0.98); color: white; text-align: 
 .float-icon:hover { transform: scale(1.1); }
 @keyframes blinker { 50% { box-shadow: 0 0 25px #25D366; } }
 
-/* Mobile Responsive */
+/* =======================================================
+   MOBILE RESPONSIVE DESIGN (Phone screens setup)
+   ======================================================= */
 @media (max-width: 768px) {
-    .header-top { flex-direction: column; gap: 15px; }
-    #start-btn { font-size: 1.2rem; padding: 15px 25px; }
-    .welcome-text { font-size: 2.2rem; }
-    header h1 { font-size: 1.8em; }
-    .image-scroller img { height: 150px; min-width: 220px; }
+    .header-top { flex-direction: column; gap: 10px; }
+    #start-btn { font-size: 1.3rem; padding: 15px 30px; }
+    .welcome-text { font-size: 2rem; letter-spacing: 2px; }
+    .intro-plane { font-size: 3.5rem; }
+    header h1 { font-size: 1.5em; }
+    .address { font-size: 1rem; }
+    .datetime { font-size: 1rem; padding: 5px 15px; }
+    
     .ribbon-content { font-size: 1rem; }
-    .footer-contact-details { flex-direction: column; text-align: center; gap: 10px; }
-    .footer-contact-details p { font-size: 0.95rem; justify-content: center; }
+    .ribbon-content i { font-size: 1.2rem; margin: 0 5px 0 20px; }
+
+    .image-scroller img { height: 160px; min-width: 250px; }
+
+    .services-container h2 { font-size: 1.8em; margin-bottom: 20px; }
+    .services-grid { grid-template-columns: 1fr; gap: 15px; padding: 0 10px; }
+    .service-box { height: auto; padding: 15px 20px; flex-direction: row; justify-content: flex-start; text-align: left; }
+    .service-box i { font-size: 1.8rem; margin-right: 15px; }
+
+    .footer-contact-details { flex-direction: column; text-align: center; gap: 12px; padding: 20px 10px; }
+    .footer-contact-details p { font-size: 0.95rem; justify-content: center; width: 100%; flex-wrap: wrap; }
+    .social-btn { font-size: 0.95em; padding: 10px 20px; }
 }

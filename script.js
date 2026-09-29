@@ -1,4 +1,4 @@
-// 1. Button Click to Start Video with Audio
+// 1. Button Click to Start Video with Full Audio (100% Working)
 document.getElementById('start-btn').addEventListener('click', function() {
     const video = document.getElementById('bg-video');
     const startBtn = document.getElementById('start-btn');
@@ -16,12 +16,12 @@ document.getElementById('start-btn').addEventListener('click', function() {
     video.volume = 1.0;
     video.play();
 
-    // Exactly 10 Seconds later: Hide intro screen, mute video, show dashboard
+    // Exactly 10 Seconds later: Hide intro screen, MUTE video, show dashboard
     setTimeout(() => {
         introScreen.style.display = 'none';
         mainWebsite.style.display = 'block';
         
-        // Mute video so it runs silently in background (Video rukega nahi)
+        // Mute video so it runs silently in background (Animation chalta rahega)
         video.muted = true;
         
         // Load Offer Popup
