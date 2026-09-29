@@ -5,66 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAUD TRAVELS AND CSC CENTER</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body oncontextmenu="return false;"> <!-- Right Click Disabled -->
 
-    <!-- Offer Popup Modal -->
-    <div id="offerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeOffer()">&times;</span>
-            <h2 id="offerTitle">Special Offer!</h2>
-            <img id="offerImage" src="" alt="Offer Image">
-            <p id="offerDesc"></p>
+    <!-- Permanent Background Video (Play on button click) -->
+    <video loop id="bg-video" playsinline>
+        <source src="assets/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- 10 Sec Intro Screen with Start Button -->
+    <div id="intro-screen">
+        <div class="intro-overlay"></div>
+        
+        <!-- Welcome Button to play audio and video -->
+        <button id="start-btn">Welcome To Saud Travels <i class="fa-solid fa-plane-departure"></i></button>
+
+        <div class="intro-content" id="intro-content" style="display: none;">
+            <i class="fa-solid fa-plane intro-plane"></i>
+            <h1 class="welcome-text">WELCOME SAUD TRAVELS</h1>
         </div>
     </div>
 
-    <header>
-        <div class="header-top">
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Shop Logo" id="shopLogo">
+    <!-- Main Website (Glassmorphism effect over video) -->
+    <div id="main-website" style="display: none;">
+
+        <!-- Offer Popup Modal -->
+        <div id="offerModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeOffer()">&times;</span>
+                <h2 id="offerTitle" class="premium-heading">Special Offer!</h2>
+                <img id="offerImage" src="" alt="Offer Image">
+                <p id="offerDesc" class="offer-desc"></p>
             </div>
-            <div class="contact-info">
-                <p>📞 Customer: 8604890504, 7235870535</p>
-                <p>👤 CO - Owner: Meraj Ahmad, Anurag Yadav</p>
+        </div>
+
+        <header>
+            <div class="header-top">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Shop Logo" id="shopLogo">
+                </div>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-phone"></i> Customer: 8604890504, 7235870535</p>
+                    <p><i class="fa-solid fa-user-tie"></i> CO - Owner: Meraj Ahmad, Anurag Yadav</p>
+                </div>
             </div>
-        </div>
-        <h1>सऊद ट्रावेल्स & सी एस सी सेण्टर</h1>
-        <p class="address">पता- जयराजपुर बिन्दवल मस्जिद के पास |</p>
-        
-        <div class="datetime">
-            <span id="date-time"></span>
-        </div>
-    </header>
-
-    <!-- Shop Images Scroller -->
-    <section class="image-scroller">
-        <img src="shop-images/1.jpg" alt="Shop Image 1">
-        <img src="shop-images/2.jpg" alt="Shop Image 2">
-        <img src="shop-images/3.jpg" alt="Shop Image 3">
-        <img src="shop-images/4.jpg" alt="Shop Image 4">
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-container">
-        <h2>हमारी सेवाएँ</h2>
-        <div class="services-grid" id="servicesGrid">
-            <!-- Services will be loaded here by JavaScript -->
-        </div>
-    </section>
-
-    <!-- Footer & Social Links (Updated with Custom Logos) -->
-    <footer>
-        <div class="social-links">
-            <a href="https://maps.app.goo.gl/Dsc8UputUHvo2myg9" target="_blank" class="social-btn map-btn">
-                <img src="images/map-logo.png" alt="Map Logo"> लोकेशन देखें
-            </a>
+            <h1>सऊद ट्रावेल्स & सी एस सी सेण्टर</h1>
+            <p class="address"><i class="fa-solid fa-location-dot"></i> पता- जयराजपुर बिन्दवल मस्जिद के पास |</p>
             
-            <a href="https://www.instagram.com/saud_travels_csc" target="_blank" class="social-btn insta-btn">
-                <img src="images/insta-logo.png" alt="Instagram Logo"> Instagram पर फॉलो करें
+            <div class="datetime">
+                <span id="date-time"></span>
+            </div>
+        </header>
+
+        <!-- Animated Ribbon (Redirects to WhatsApp) -->
+        <a href="https://wa.me/918604890504?text=Hello,%20I%20need%20ticket%20booking%20services" target="_blank" class="ribbon-container">
+            <div class="ribbon-content">
+                <i class="fa-solid fa-plane"></i> Premium Flight Booking
+                <i class="fa-solid fa-bus"></i> Luxury Bus Tickets
+                <i class="fa-solid fa-train"></i> Express Train Reservation
+                <!-- Duplicate for seamless animation -->
+                <i class="fa-solid fa-plane"></i> Premium Flight Booking
+                <i class="fa-solid fa-bus"></i> Luxury Bus Tickets
+                <i class="fa-solid fa-train"></i> Express Train Reservation
+            </div>
+        </a>
+
+        <!-- Stop & Go Scrolling Shop Images (5 Sec Scroll) -->
+        <section class="image-scroller-wrapper">
+            <div class="image-scroller" id="img-scroller">
+                <img src="shop-images/1.jpg" alt="Shop Image 1">
+                <img src="shop-images/2.jpg" alt="Shop Image 2">
+                <img src="shop-images/3.jpg" alt="Shop Image 3">
+                <img src="shop-images/4.jpg" alt="Shop Image 4">
+            </div>
+        </section>
+
+        <!-- Services Section with Colorful Boxes -->
+        <section class="services-container">
+            <h2>हमारी प्रमुख सेवाएँ</h2>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Premium Full-Width Footer & Contact Details -->
+        <footer>
+            <div class="footer-container">
+                <div class="social-links">
+                    <a href="https://maps.app.goo.gl/2cfc5mqnuK5xGj8A8" target="_blank" class="social-btn map-btn">
+                        <img src="images/map-logo.png" alt="Map"> लोकेशन देखें
+                    </a>
+                    
+                    <a href="https://www.instagram.com/invites/contact/?utm_content=idrcc2z&stkn=16jnxcrvec71q" target="_blank" class="social-btn insta-btn">
+                        <img src="images/insta-logo.png" alt="Instagram"> Instagram पर फॉलो करें
+                    </a>
+                </div>
+
+                <!-- Professional Contact Info (Full Bottom Cover) -->
+                <div class="footer-contact-details">
+                    <p><i class="fa-solid fa-user-tie"></i> <strong>Pro:</strong> SHAIKH MERAJ AHMAD</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp:</strong> 8604890504 , 7235870535</p>
+                    <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> saud.travels.csc@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> Jairajpur Bindwal Masjid Ke Pass</p>
+                </div>
+            </div>
+            <div class="copyright-bar">
+                <p>&copy; 2026 Saud Travels & CSC Center. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Floating Action Buttons (Only WhatsApp left on side) -->
+        <div class="floating-icons">
+            <a href="https://wa.me/918604890504" class="float-icon wa-blink" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
             </a>
         </div>
-        <p>&copy; 2026 Saud Travels & CSC Center. All Rights Reserved.</p>
-    </footer>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
