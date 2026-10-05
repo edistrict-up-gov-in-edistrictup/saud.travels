@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Saud Travels</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #333; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-box, .admin-dashboard { background: #222; padding: 30px; border-radius: 10px; text-align: center; width: 100%; max-width: 400px;}
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+        button { background: #ff5722; color: white; font-weight: bold; cursor: pointer; }
+        .admin-dashboard { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box" id="loginBox">
+        <h2>Admin Login</h2>
+        <input type="text" id="userid" placeholder="Login ID">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="errorMsg" style="color:red; display:none;">Incorrect ID or Password</p>
+    </div>
+
+    <div class="admin-dashboard" id="adminDashboard">
+        <h2>Control Panel</h2>
+        <p style="font-size: 12px; color: #aaa;">Note: GitHub Pages पर फाइल ऑटोमैटिक अपडेट नहीं होती। ऑफर चेंज करने के लिए <b>data/offer.json</b> फाइल को मैनुअली एडिट करके GitHub पर कमिट करें।</p>
+        
+        <input type="text" id="newOfferName" placeholder="Offer Name">
+        <input type="text" id="newOfferDesc" placeholder="Offer Details">
+        <input type="text" id="newOfferImage" placeholder="Offer Image URL">
+        <button onclick="alert('कृपया GitHub रिपॉजिटरी में जाकर data/offer.json फाइल में ये डिटेल्स अपडेट करें।')">Update Offer</button>
+    </div>
+
+    <script>
+        function login() {
+            const id = document.getElementById('userid').value;
+            const pass = document.getElementById('password').value;
+            
+            if (id === "Meraj@85170" && pass === "Shaikh@43251435") {
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
